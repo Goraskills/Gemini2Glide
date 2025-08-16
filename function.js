@@ -12,15 +12,14 @@ window.function = async function (
 ) {
 	// Assigner des valeurs par défaut pour les paramètres optionnels
 	const key = apiKey.value ?? null;
-	const modelName = model.value ?? "models/gemini-1.5-flash"; // Format de nom de modèle corrigé
+	const modelName = model.value ?? "models/gemini-1.5-flash";
 	const userText = userPrompt.value ?? "Hello world";
 	const sysPrompt = systemPrompt.value ?? null;
 	const outFormat = outputFormat.value ?? "text";
 	const schema = jsonSchema.value ?? null;
     
-    // Définir l'URL du proxy Cloudflare que vous avez créé
-    // REMPLACER cette URL par la vôtre
-	const PROXY_URL = 'https://nom-de-votre-worker.votre-nom.workers.dev/';
+    // Définir l'URL de votre proxy Cloudflare
+	const PROXY_URL = 'https://gemini-proxy.goraskills.workers.dev';
 
 	// Vérifier si une clé API est fournie avant de continuer
 	if (!key) {
@@ -54,8 +53,6 @@ window.function = async function (
     
     // Construire le corps de la requête finale à envoyer au proxy
     const requestBody = {
-        // La clé API et le nom du modèle sont envoyés au proxy
-        // pour qu'il construise l'URL correcte.
         apiKey: key, 
         model: modelName,
         contents: [
