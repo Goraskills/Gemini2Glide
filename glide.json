@@ -1,0 +1,43 @@
+[
+	{
+		"kind": "column",
+		"name": "Gemini AI",
+		"description": "Utilisez l'API de Google Gemini pour générer du contenu.",
+		"author": "Votre nom",
+		"params": [
+			{
+				"name": "apiKey",
+				"displayName": "Clé API Gemini",
+				"type": "string"
+			},
+			{
+				"name": "model",
+				"displayName": "Modèle (e.g. gemini-1.5-pro)",
+				"type": "string"
+			},
+			{
+				"name": "systemPrompt",
+				"displayName": "Prompt du Système",
+				"type": "string"
+			},
+			{
+				"name": "userPrompt",
+				"displayName": "Prompt de l'Utilisateur",
+				"type": "string"
+			},
+			{
+				"name": "outputFormat",
+				"displayName": "Format de sortie (text, json)",
+				"type": "string"
+			},
+			{
+				"name": "jsonSchema",
+				"displayName": "Schéma JSON (si JSON)",
+				"type": "string"
+			}
+		],
+		"result": {
+			"type": "string"
+		}
+	}
+]
